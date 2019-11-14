@@ -1,6 +1,6 @@
-
+import java.util.Scanner;
 /**
- *  @author - 
+ *  @author - Xanti Gardeazabal Iribarren
  *  
  * Incluye todo el código dentro del main()
  * No declares ningún nuevo método en esta clase ni atributos
@@ -25,7 +25,16 @@ public class AppDemoBucles
      */
     public static void main(String[] args)
     {
-         
+        Scanner teclado = new Scanner(System.in);
+        DemoBucles app = new DemoBucles();
+        System.out.println("Teclee tope de aleatorios a generar [10, 15]: ");
+        int topealeatorios = teclado.nextInt();
+        while(topealeatorios > 15 || topealeatorios < 10){
+            System.out.println("Error, teclee tope aleatorios a generar [10, 15]: ");
+            topealeatorios = teclado.nextInt();
+        }
+        app.generarAleatorios(topealeatorios);
+        app.mostrarEscalera(6, 4, 12);
     }
 }
 

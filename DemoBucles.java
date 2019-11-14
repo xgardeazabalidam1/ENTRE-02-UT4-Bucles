@@ -77,7 +77,7 @@ public class DemoBucles
         int repeticiones = 0;
         while (repeticiones < n && aleatorio != 0){
             escribirSumaPotencias(aleatorio);
-            System.out.println("\n");
+            System.out.println("");
             aleatorio = generador.nextInt(256);
             repeticiones ++;
             if (aleatorio == 0){
@@ -100,18 +100,17 @@ public class DemoBucles
             System.out.print("" + caracter);
         }
     }
-    
-    /**
-     *  Genera la figura tal como muestra el enunciado 
-     *  con ayuda del método anterior
-     *  
-     *   Usa bucles for
-     */
+
     public  void mostrarEscalera(int escalones, int alto, int ancho) {
-        System.out.println();
-
-         
-
+        for(int i = 0; i < escalones; i++){
+            for(int j = 0; j < alto; j++){
+                System.out.println("");
+                for(int k = 1; k <= (i * ancho); k++){
+                    System.out.print(" ");
+                }
+                escribirCaracter(ancho, '*');
+            }
+        }
     }
-
 }
+
