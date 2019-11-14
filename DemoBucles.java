@@ -55,7 +55,7 @@ public class DemoBucles
     /**
      * Generar aleatorios entre 0 y 255
      * y escribir cada aleatorio como suma de potencias de 2
-     * Parar al salir el 255 o despues de generar n aleatorios
+     * Parar al salir el 0 o despues de generar n aleatorios
      * (ver enunciado)
      * 
      * Hay que usar el método anterior
