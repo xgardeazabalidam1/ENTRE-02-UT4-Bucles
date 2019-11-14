@@ -64,7 +64,7 @@ public class DemoBucles
     /**
      * Generar aleatorios entre 0 y 255
      * y escribir cada aleatorio como suma de potencias de 2
-     * Parar al salir el 0 o despues de generar n aleatorios
+     * Parar al salir el 255 o despues de generar n aleatorios
      * (ver enunciado)
      * 
      * Hay que usar el método anterior
@@ -73,21 +73,34 @@ public class DemoBucles
      * 
      */
     public void generarAleatorios(int n) {
-
-       
-
+        int aleatorio = generador.nextInt(256);
+        int repeticiones = 0;
+        while (repeticiones < n && aleatorio != 0){
+            escribirSumaPotencias(aleatorio);
+            System.out.println("\n");
+            aleatorio = generador.nextInt(256);
+            repeticiones ++;
+            if (aleatorio == 0){
+                System.out.print("Salió el 0");
+            }
+            else if(repeticiones == n){
+                System.out.print("Se generaron " + n + " aleatorios");
+            }
+        }
     }
 
     /**
-     *  Escribe en pantalla caracter n veces en la misma línes
+     *  Escribe en pantalla caracter n veces en la misma línea
      *  
      *  Usa bucles for
      */
     public void escribirCaracter(int n, char caracter)
     {
-         
+        for(int i = 1; i <= n; i++){
+            System.out.print("" + caracter);
+        }
     }
-
+    
     /**
      *  Genera la figura tal como muestra el enunciado 
      *  con ayuda del método anterior
